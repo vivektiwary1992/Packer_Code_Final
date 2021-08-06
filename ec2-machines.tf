@@ -1,3 +1,10 @@
+data "aws_ami" "ion_ami" {
+  most_recent =  true
+  owner  = [*self*]
+  name_reges = "^ion_packer-.........."
+}
+
+
 resource "aws_instance" "webapp1" {
   ami                         = var.ami
   instance_type               = "t2.micro"
